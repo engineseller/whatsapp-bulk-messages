@@ -1,3 +1,5 @@
+#!/bash/python3
+
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -20,13 +22,12 @@ for column in excel_data['Contact'].tolist():
         url = 'https://web.whatsapp.com/send?phone=' + str(excel_data['Contact'][count]) + '&text=' + excel_data['Message'][0]
         sent = False
 
-        # It tries 3 times to send a message in case if there any error occurred
         driver.get(url)
 
         try:
             click_btn = WebDriverWait(driver, 35).until(EC.element_to_be_clickable((By.CLASS_NAME, '_4sWnG')))
         except Exception as e:
-            print("Sorry message could not sent to " + str(excel_data['Contact'][count]))
+            print("Message could not sent to " + str(excel_data['Contact'][count]) + str(e))
         else:
             sleep(2)
             click_btn.click()
