@@ -16,7 +16,7 @@ Open terminal and run following commands
 >> chmod 755 ./whatsapp.py
 ```
 ```
->> pip3 install -r requirements.txt`
+>> pip3 install -r requirements.txt
 ```
 
 ## Send Bulk Messages
