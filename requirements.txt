@@ -1,0 +1,4 @@
+pandas
+xlrd
+selenium
+webdriver_manager
